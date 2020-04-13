@@ -1,0 +1,36 @@
+{
+    "id": "com.microsoft.Quiz",
+    "name": "Quiz App",
+    "description": "Quiz Description",
+    "provider": {
+        "name": "Microsoft",
+        "websiteUrl": "https://www.microsoft.com/",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/app-tos"
+    },
+    "icon": "color.png",
+    "version": "1.0.0",
+    "views": {
+        "CardView": {
+            "sourceLocation": "cardView.json"
+        },
+        "LaunchView": {
+            "sourceLocation": "CreateView.html",
+            "header": "Create a quiz"
+        },
+        "UpdateView": {
+            "sourceLocation": "UpdateView.html",
+            "header": "Answer the quiz"
+        },
+        "DetailView": {
+            "sourceLocation": "DetailView.html",
+            "header": "Quiz result"
+        }
+    },
+    "localizationInfo": {
+        "defaultLocale": "en-us",
+        "localeFiles": {
+            "en-us": "strings/strings.json"
+        }
+    }
+}

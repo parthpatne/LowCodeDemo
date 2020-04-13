@@ -1,0 +1,141 @@
+{
+    "view": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+            {
+                "type": "ColumnSet",
+                "columns": [
+                    {
+                        "type": "Column",
+                        "width": "stretch",
+                        "verticalContentAlignment": "center",
+                        "items": [
+                            {
+                                "type": "TextBlock",
+                                "text": "**{userProfiles[instance.creatorId].displayName}** created a Quiz",
+                                "size": "small",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Due by {{DATE({instance.expiry}, SHORT)}} {{TIME({instance.expiry})}}",
+                                "size": "small",
+                                "wrap": true,
+                                "isSubtle": true,
+                                "spacing": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "TextBlock",
+                "text": "{instance.title}",
+                "size": "large",
+                "maxLines": 3,
+                "wrap": true,
+                "weight": "bolder",
+                "spacing": "small"
+            },
+            {
+                "$when": "{instance.rowsVisibility == 'All'}",
+                "type": "TextBlock",
+                "text": "Results visible to everyone",
+                "maxLines": 2,
+                "wrap": true,
+                "isSubtle": true,
+                "size": "small",
+                "spacing": "none"
+            },
+            {
+                "$when": "{instance.rowsVisibility == 'Sender'}",
+                "type": "TextBlock",
+                "text": "Results visible to sender only",
+                "size": "small",
+                "maxLines": 2,
+                "wrap": true,
+                "isSubtle": true,
+                "spacing": "none"
+            },
+            {
+                "type": "Container",
+                "style": "emphasis",
+                "items": [
+                    {
+                        "$when": "{instance.columns.length == 1}",
+                        "type": "TextBlock",
+                        "text": "1 question",
+                        "size": "medium",
+                        "wrap": true,
+                        "spacing": "medium"
+                    },
+                    {
+                        "$when": "{instance.columns.length > 1}",
+                        "type": "TextBlock",
+                        "text": "{instance.columns.length} questions",
+                        "size": "medium",
+                        "wrap": true,
+                        "spacing": "medium"
+                    }
+                ]
+            },
+            {
+                "$when": "{summary.rowCreatorCount == 0}",
+                "type": "TextBlock",
+                "text": "Be the first one to take the quiz",
+                "size": "small",
+                "weight": "bolder",
+                "maxLines": 2,
+                "wrap": true,
+                "spacing": "small"
+            },
+            {
+                "$when": "{summary.rowCreatorCount > 0}",
+                "type": "TextBlock",
+                "text": "{summary.rowCreatorCount} people responded",
+                "size": "small",
+                "weight": "bolder",
+                "maxLines": 2,
+                "wrap": true,
+                "spacing": "small"
+            }
+        ],
+        "actions": [
+            {
+                "title": "Take Quiz",
+                "command": "LaunchActionView",
+                "parameters": {
+                    "viewName": "UpdateView"
+                }
+            },
+            {
+                "title": "View Results",
+                "command": "LaunchActionView",
+                "parameters": {
+                    "viewName": "DetailView"
+                }
+            }
+        ]
+    },
+    "data": {
+        "instance": {
+            "command": "GetActionInstance"
+        },
+        "summary": {
+            "command": "GetActionInstanceSummary",
+            "parameters": {
+                "isShortSummary": true
+            }
+        },
+        "userProfiles": {
+            "command": "GetUserProfiles",
+            "parameters": {
+                "userIds": [
+                    "$ActionInstanceCreator"
+                ]
+            }
+        }
+    }
+}
