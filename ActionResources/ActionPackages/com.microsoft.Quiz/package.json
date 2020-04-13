@@ -1,0 +1,10 @@
+{
+    "name": "quiz",
+    "version": "1.0.0",
+    "description": "Quiz",
+    "scripts": {
+        "build": "\"\"../node_modules/.bin/webpack\"\" --env.mode=prod --env.watch=false",
+        "build-dev": "\"\"../node_modules/.bin/webpack\"\" --env.mode=dev --env.watch=false",
+        "start": "\"\"../node_modules/.bin/webpack\"\" --env.mode=dev --env.watch=true"
+    }
+}

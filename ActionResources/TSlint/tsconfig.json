@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true
+    },
+    "include": [
+        "./../**/src/**/*.ts",
+        "./../**/src/**/*.tsx"
+    ]
+}

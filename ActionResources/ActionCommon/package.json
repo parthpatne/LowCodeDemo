@@ -1,0 +1,9 @@
+{
+  "name": "action-common",
+  "version": "1.0.0",
+  "description": "ActionCommon",
+  "private": true,
+  "dependencies": {
+    "uuid": "3.3.2"
+  }
+}

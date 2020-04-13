@@ -1,0 +1,24 @@
+{
+  "name": "lint",
+  "version": "1.0.0",
+  "description": "Lint for Actions ts/tsx file",
+  "private": true,
+  "watch": {
+    "lint": {
+      "patterns": [
+        "./../**/src/**/"
+      ],
+      "extensions": "ts,tsx",
+      "quiet": false
+    }
+  },
+  "scripts": {
+    "lint": "\"\"./node_modules/.bin/tslint\"\" -c tslint.json -p tsconfig.json"
+  },
+  "devDependencies": {
+    "npm-watch": "0.6.0",
+    "tslint": "5.18.0",
+    "tslint-microsoft-contrib": "6.2.0",
+    "typescript": "3.5.3"
+  }
+}

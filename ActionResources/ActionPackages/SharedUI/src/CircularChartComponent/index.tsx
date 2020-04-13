@@ -1,0 +1,1 @@
+export {CircularChartComponent, ICircularChartProps} from './CircularChartComponent';

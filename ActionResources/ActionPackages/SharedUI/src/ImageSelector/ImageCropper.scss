@@ -1,0 +1,77 @@
+@import "@sharedUI/scss/common.scss";
+
+.image-crop-dialog {
+  @extend .dialog-base;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.image-crop-parent {
+  margin-bottom: 20px;
+}
+
+.img-parent-div {
+  position: relative;
+  overflow: hidden;
+  cursor: move;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  background-color: white;
+}
+
+.img-shaded-div {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.img-shaded-div-top {
+  @extend .img-shaded-div;
+  top: 0;
+}
+
+.img-shaded-div-bottom {
+  @extend .img-shaded-div;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-element {
+  position: absolute;
+  pointer-events: none;
+  cursor: move;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.zoom-slider-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  margin-top: 20px;
+  z-index: 2;
+  position: absolute;
+  bottom: 20%;
+}
+
+.zoom-slider {
+  width: inherit;
+}
+
+.crop-controls {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}

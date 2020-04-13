@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "target": "es5",
+        "jsx": "react",
+        "baseUrl": ".",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "paths": {
+            "@actionSDK": [
+                "../ActionSDK/src"
+            ],
+            "@sharedUI": [
+                "./SharedUI/src"
+            ],
+            // @actionCommon added because we are use this alias in @actionSDK. Dont direct import this alias in action.
+            "@actionCommon": [
+                "../ActionCommon/src"
+            ]
+        }
+    }
+}

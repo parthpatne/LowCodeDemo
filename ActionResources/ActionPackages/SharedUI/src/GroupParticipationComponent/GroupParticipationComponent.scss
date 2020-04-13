@@ -1,0 +1,23 @@
+.cardview {
+  align-items: center;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center
+}
+
+.circular-chart-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.primary-text {
+    font-weight: bold;
+}
+
+.info-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
